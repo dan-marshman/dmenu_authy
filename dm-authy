@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Pipe the services into dmenu and get the users name
+name=$(mambembe-cli list-services | dmenu -i -l 40)
+
+# Strip out everything but the Name
+stripped_name=$(echo $name | sed "s/\"\ Account $PARTITION_COLUMN.*//" | sed s/Name:\ \"//)
+
+# Ensure characters are appropriately escaped (e.g. if there are spaces)
+stripped_name=$(printf "%q" $stripped_name)
+echo $stripped_name
+if [[ $stripped_name = "" ]] ; then
+    echo "STRIPPED NAME is empty"
+    exit 1
+fi
+
+# Get token for the stripped name
+token_info=$(mambembe-cli get-token --service-name $stripped_name)
+
+# Sometimes the above code seems to not work - need to exit if the token info is empty
+if [[ $token_info = "" ]] ; then
+    echo "TOKEN_INFO is empty"
+    exit 1
+fi
+
+# Strip the token out of the token info
+token=$(echo $token_info | sed "s/^.*\(Token.*Type\).*$/\1/" | sed "s/\"\ Type$PARTITION_COLUMN.*//" | sed "s/Token:\ \"//")
+
+# Echo to clipboard
+echo $token | xclip -i -selection clipboard
