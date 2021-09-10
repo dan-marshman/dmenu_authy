@@ -11,7 +11,7 @@ You will also require two dependencies
 1. (https://archlinux.org/packages/extra/x86_64/xclip/)[xclip]
 2. (https://github.com/jaysonsantos/mambembe)[Mambembe]
 
-Obviously you also need dmenu. Presumably you won't without it. 
+Obviously you also need dmenu. Presumably you won't be reading this page without it. 
 
 ### Setup
 Register your device with Authy using the Mambembe instructions - currently:
