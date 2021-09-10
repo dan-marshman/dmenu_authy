@@ -1,5 +1,5 @@
 # dmenu_authy
-A simple wrapper to pipe authy data into dmenu, and the token for the chosen account back out
+A simple wrapper to pipe authy data into dmenu, and then extract a temporaty token back out.
 
 ## Installation and Usage
 
