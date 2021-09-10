@@ -8,8 +8,8 @@ To install, close this repository or just save the dm-authy
 
 ### Dependencies
 You will also require two dependencies
-1. (https://archlinux.org/packages/extra/x86_64/xclip/)[xclip]
-2. (https://github.com/jaysonsantos/mambembe)[Mambembe]
+1. [https://archlinux.org/packages/extra/x86_64/xclip/](xclip)
+2. [https://github.com/jaysonsantos/mambembe](Mambembe)
 
 Obviously you also need dmenu. Presumably you won't be reading this page without it. 
 
