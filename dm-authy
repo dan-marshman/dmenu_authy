@@ -8,7 +8,6 @@ stripped_name=$(echo $name | sed "s/\"\ Account $PARTITION_COLUMN.*//" | sed s/N
 
 # Ensure characters are appropriately escaped (e.g. if there are spaces)
 stripped_name=$(printf "%q" $stripped_name)
-echo $stripped_name
 if [[ $stripped_name = "" ]] ; then
     echo "STRIPPED NAME is empty"
     exit 1
